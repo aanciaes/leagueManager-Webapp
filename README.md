@@ -1,1 +1,0 @@
-# leagueManager-Webapp
