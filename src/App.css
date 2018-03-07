@@ -1,15 +1,23 @@
+*{
+ /*  cursor: url('soccer-ball-cursor.png'), auto; */
+}
+
 .App {
   text-align: center;
+  background-image: url('big-background.jpg');
+  background-size: cover;
+  padding:100px 0;
 }
 
 .App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+  padding-top: 50px;
+  animation: App-logo-spin infinite 10s linear;
+  height: 400px;
 }
 
 .App-header {
   background-color: #222;
-  height: 150px;
+  height: 800px;
   padding: 20px;
   color: white;
 }
@@ -20,6 +28,61 @@
 
 .App-intro {
   font-size: large;
+}
+
+.button-login-wrapper{
+  padding: 50px 0;
+}
+
+.button-login-wrapper > button{
+  padding: 5px 80px;
+  background-color:rgba(0,0,0,0);
+  font-size: 1.5em;
+  color: white;
+  font-weight: bold;
+  border:3px solid white;
+}
+
+.button-login-wrapper > button:hover{
+  padding: 5px 80px;
+  background-color:rgba(255, 255, 255, 1);
+  font-size: 1.5em;
+  color: black;
+  font-weight: bold;
+  border:3px solid white;
+  cursor: pointer;
+}
+
+.wrapper-login > .wrapper-input-login{
+  padding: 10px 0;
+  padding-right: 5%;
+  display: inline-block;
+}
+
+.wrapper-login > .wrapper-input-login > span{
+  color: white;
+  font-size: 1.5em;
+}
+
+.wrapper-login > .wrapper-input-login > input{
+  border:3px solid white;
+  color: white;
+  font-size: 1.5em;
+  background-color: rgba(0,0,0,0);
+  padding:5px 0;
+}
+
+.tiago-wrapper{
+  position: relative;
+  margin-top: 2px;
+  height:800px;
+  background-color: rgb(134, 88, 219);
+}
+
+.tiago{
+  padding: 50px ;
+  color:rgb(255, 255, 255);
+  font-size: 30px;
 }
 
 @keyframes App-logo-spin {
