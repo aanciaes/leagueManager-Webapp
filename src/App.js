@@ -28,11 +28,11 @@ class App extends Component {
         
           <div className="button-login-wrapper">
             <Button tag = " GO "/>
-            <p>Ainda não tens conta? <Link className="link" to="/sign-in">Clica Aqui</Link> e vem jogar connosco! </p>
+            <p>Ainda não tens conta? <Link className="link" to="/sign-up">Clica Aqui</Link> e vem jogar connosco! </p>
           </div>
       </div>
       )}/>
-        <Route exact={true} path="/sign-in">
+        <Route exact={true} path="/sign-up">
           <div>
         entrei!
         </div>
