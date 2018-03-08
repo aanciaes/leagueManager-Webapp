@@ -19,7 +19,6 @@ class App extends Component {
                 <Switch>
                     <Route exact={true} path="/" render={() => (
                         <div className="App">
-
                             <img src={ball} className="App-logo" alt="logo"/>
                             <div className="wrapper-login">
                                 <Input tag=" Username "/>
@@ -28,12 +27,12 @@ class App extends Component {
 
                             <div className="button-login-wrapper">
                                 <Button tag=" GO "/>
-                                <p>Ainda não tens conta? <Link className="link" to="/sign-in">Clica Aqui</Link> e vem
+                                <p>Ainda não tens conta? <Link className="link" to="/sign-up">Clica Aqui</Link> e vem
                                     jogar connosco! </p>
                             </div>
                         </div>
                     )}/>
-                    <Route exact={true} path="/sign-in">
+                    <Route exact={true} path="/sign-up">
                         <div>
                             entrei!
                         </div>
