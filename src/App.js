@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
+import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
 import logo from './logo.svg';
 import ball from './Soccer_ball.svg';
 import './App.css';
 
+
 class App extends Component {
-  constructor(props){
-    super(props);
+  constructor(){
+    super();
   this.state = {
     prop1:true,
     prop2:false
@@ -13,45 +15,53 @@ class App extends Component {
 }
   render() {
     return (
-      <div className="App">
+      <Router>
+        <Switch>
+        <Route exact={true} path="/" render = {() => (
+        <div className="App">
 
-        <img src={ball} className="App-logo" alt="logo" />
-        <div className="wrapper-login">
-          <div className="wrapper-input-login">
-            <span>Username:</span>
-            <input></input>
+          <img src={ball} className="App-logo" alt="logo" />
+          <div className="wrapper-login">
+            <Input tag = " Username "/>
+            <Input tag = " Password "/>   
           </div>
-
-          <div className="wrapper-input-login">
-            <span>Password:</span>
-            <input></input>
+        
+          <div className="button-login-wrapper">
+            <Button tag = " GO "/>
+            <p>Ainda não tens conta? <Link className="link" to="/sign-in">Clica Aqui</Link> e vem jogar connosco! </p>
           </div>
-        </div>
-        
-        <div className="button-login-wrapper">
-          <button type='submit'>Go</button>
-        </div>
-        
-       {/*  <Badjoraz teste1 = {this.state.prop1} teste2 = {this.state.prop2}/> */}
       </div>
-
+      )}/>
+        <Route exact={true} path="/sign-in">
+          <div>
+        entrei!
+        </div>
+      </Route>
+    </Switch>
+    </Router>
     );
   }
 }
 
-class Badjoraz extends Component{
+class Input extends Component{
 
   render(){
-    var text="";
+  
     return(
-      <div className="tiago-wrapper">
-      
-        <p className ="tiago">
-          {this.props.teste1? text="badjoraz":text="zgarafi"}
-          {text}    
-          </p>
-         
-        </div>
+      <div className="wrapper-input-login">
+            <span>{this.props.tag}</span>
+            <input></input>
+          </div>
+    );
+  }
+
+}
+
+class Button extends Component{
+
+  render(){
+    return(
+      <button type='submit'>{this.props.tag}</button>
     );
   }
 
