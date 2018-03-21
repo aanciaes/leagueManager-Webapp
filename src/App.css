@@ -1,15 +1,38 @@
 
 .App {
+  position: relative;
   text-align: center;
-  background-image: url('big-background.jpg');
-  background-size: cover;
-  padding:100px 0;
+  background: radial-gradient( rgb(0,255,0),rgb(5,148,100));
+  padding:20px 0;
+  z-index: 2;
+  overflow: hidden;
+}
+
+.App > h1{
+  color: white;
+}
+
+.footer{
+  z-index: 200;
+  position: fixed;
+  bottom:0;
+  width: 100% ;
+  height: 100px;
+   background-image: url(' grass-no-bottom-border-hi.png'); 
 }
 
 .App-logo {
-  padding-top: 50px;
-  animation: App-logo-spin infinite 10s linear;
-  height: 400px;
+  animation: App-logo-spin infinite 2s linear;
+  height: 130px;
+}
+
+.ball-wrapper{
+  position: fixed;
+  margin-left: -5%;
+  width:150px;
+ bottom:-5px;
+  animation: App-logo-roll infinite 10s linear, App-logo-jump infinite 5s ease-in;
+ 
 }
 
 .App-header {
@@ -25,6 +48,38 @@
 
 .App-intro {
   font-size: large;
+}
+
+
+/* Sign-up css */
+.sign-side{
+  text-align: right;
+  max-width: 50%;
+  padding-bottom: 100%;
+  
+}
+
+.sign-side > button{
+  margin-top: 20px;
+  background-color: rgb(5,148,100);
+  border: 3px solid white;
+  color :white;
+  padding: 10px 20px;
+  width: 25%;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.sign-side > button:hover{
+  cursor: pointer;
+  margin-top: 20px;
+  background-color: rgb(17, 206, 17);
+  border: 3px solid white;
+  color :white;
+  padding: 10px 20px;
+  width: 25%;
+  font-size: 20px;
+  font-weight: bold;
 }
 
 .button-login-wrapper{
@@ -68,20 +123,45 @@
   display: inline-block;
 }
 
-.wrapper-login > .wrapper-input-login > span{
+.wrapper-input-login > span{
   color: white;
   font-size: 1.5em;
 }
 
-.wrapper-login > .wrapper-input-login > input{
+.wrapper-input-login > input{
   border:3px solid white;
   color: white;
+  margin-top:20px;
+  margin-left: 10px; 
   font-size: 1.5em;
   background-color: rgba(0,0,0,0);
-  padding:5px 0;
+  padding:5px 2%;
+}
+
+/* errors */
+
+.input-error{
+  color: red;
 }
 
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+@keyframes App-logo-roll {
+  from { margin-left:-10%; }
+  to { margin-left:100%; }
+}
+
+@keyframes App-logo-jump {
+  0% {  bottom: -5px; }
+  60% {  bottom: -5px;  }
+  70% {bottom: 250px; }
+  80% {bottom: -10px;}
+  85%{bottom: 60px;}
+  90%{bottom: -10px;}
+  95%{bottom: 20px;}
+  100%{bottom:-5px;}
+}
+
