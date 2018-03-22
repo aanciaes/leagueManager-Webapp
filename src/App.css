@@ -23,13 +23,13 @@
 
 .App-logo {
   animation: App-logo-spin infinite 2s linear;
-  height: 130px;
+  max-width: 100%;
 }
 
 .ball-wrapper{
   position: fixed;
   margin-left: -5%;
-  width:150px;
+  width:100px;
  bottom:-5px;
   animation: App-logo-roll infinite 10s linear, App-logo-jump infinite 5s ease-in;
  
@@ -53,19 +53,37 @@
 
 /* Sign-up css */
 .sign-side{
-  text-align: right;
-  max-width: 50%;
+  text-align: center;
+  width: 60%;
+  /*tirar isto*/
   padding-bottom: 100%;
-  
+  margin-top:50px;
+}
+
+.sign-side > .wrapper-input-login{
+  display: block;
+  text-align: center;
+}
+
+.sign-side > .wrapper-input-login > input{
+  max-width: 50%;
+}
+
+.sign-side > .wrapper-input-login > div{
+  max-width: 100%;
+}
+
+.sign-side > .wrapper-input-login > div >p{
+  max-width: 100%;
 }
 
 .sign-side > button{
   margin-top: 20px;
   background-color: rgb(5,148,100);
-  border: 3px solid white;
+  border: 2px solid white;
   color :white;
-  padding: 10px 20px;
-  width: 25%;
+  padding: 10px 0;
+  width: 30%;
   font-size: 20px;
   font-weight: bold;
 }
@@ -74,7 +92,7 @@
   cursor: pointer;
   margin-top: 20px;
   background-color: rgb(17, 206, 17);
-  border: 3px solid white;
+  border: 2px solid white;
   color :white;
   padding: 10px 20px;
   width: 25%;
@@ -92,7 +110,7 @@
   font-size: 1.5em;
   color: white;
   font-weight: bold;
-  border:3px solid white;
+  border:2px solid white;
 }
 
 .button-login-wrapper > p{
@@ -113,7 +131,7 @@
   font-size: 1.5em;
   color: black;
   font-weight: bold;
-  border: 3px solid black;
+  border: 2px solid black;
   cursor: pointer;
 }
 
@@ -123,25 +141,43 @@
   display: inline-block;
 }
 
-.wrapper-input-login > span{
+.wrapper-input-login > div >p{
   color: white;
   font-size: 1.5em;
 }
 
 .wrapper-input-login > input{
-  border:3px solid white;
+  border: 2px solid white;
   color: white;
-  margin-top:20px;
-  margin-left: 10px; 
+  /* margin-top: 20px; */
+  margin-left: 10px;
   font-size: 1.5em;
   background-color: rgba(0,0,0,0);
-  padding:5px 2%;
+  padding: 0 2%;
 }
 
 /* errors */
 
-.input-error{
-  color: red;
+.errorWrapper{
+  margin:0 50px;
+  text-align: left;
+}
+.error{
+  color: rgb(252, 45, 45)!important;
+}
+
+@media(max-width:600px){
+  .sign-side{
+    width: 100%;
+  }
+
+  .sign-side > button{
+    width: 100px;
+  }
+
+  .ball-wrapper{
+    width: 50px;
+  }
 }
 
 @keyframes App-logo-spin {
