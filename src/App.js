@@ -35,8 +35,6 @@ class App extends Component {
 
     signupHandler(){
 
-        let form = $('#form-signup');
-
         let email = $(document).find('input[name="email"]');
         let emailString = email[0].value;
 
@@ -100,6 +98,7 @@ class App extends Component {
                 data: JSON.stringify(json),
                 success: function(data){
                     console.log(data);
+                    alert("YEEEE");
                 }});
         }
 
@@ -182,7 +181,6 @@ class App extends Component {
                     <Route exact={true} path="/sign-up">
                         <div className="App">
                             <h1 className="title"> SIGN UP NOW </h1>
-                            <form id="form-signup">
                                 <div className="sign-side">
                                     <Input id="username-sign-up" name="username" tag="Username" type="input" class="wrapper-input-login" change={this.changeUsernameHandler}/>
                                     <Input id="password-sign-up" name="password" tag="Password" type="password" class="wrapper-input-login"  change={this.changePasswordHandler}/>
@@ -192,8 +190,6 @@ class App extends Component {
                                         <p name="error"></p>
                                     </div>  
                                 </div>
-                                                                 
-                            </form> 
                             <div className="ball-wrapper">
                                 <img id="footer-image" src="" className="App-logo" alt=""/>
                             </div>
