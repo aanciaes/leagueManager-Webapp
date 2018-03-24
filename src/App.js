@@ -94,7 +94,7 @@ class App extends Component {
             $.ajax({
                 type: 'POST',
                 contentType: "application/json; charset=utf-8",
-                url: "http://localhost:8080/user",
+                url: "/api/user",
                 data: JSON.stringify(json),
                 success: function(data){
                     console.log(data);
