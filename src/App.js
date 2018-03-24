@@ -80,7 +80,7 @@ class App extends Component {
             for(let i = 0; i<errorArray.length; i++){
                 errorMessage += errorArray[i] + "<br>";
             }
-            $('*[name=error').html(errorMessage);
+            $('*[name=error]').html(errorMessage);
             $('*[name=error]').addClass('error');
         }
         else{

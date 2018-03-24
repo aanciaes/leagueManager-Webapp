@@ -11,7 +11,8 @@ COPY gateway.Nginx /etc/nginx/sites-available/default
 
 WORKDIR /home/league-manager-webapp
 
-CMD npm run build \
+CMD npm install \
+	&& npm run build \
 	&& service nginx start \
 	&& tail -f /dev/null
 
