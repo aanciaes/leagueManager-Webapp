@@ -1,15 +1,43 @@
+
 .App {
+  position: relative;
   text-align: center;
+  background: radial-gradient( rgb(0,255,0),rgb(5,148,100));
+  padding:20px 0;
+  z-index: 2;
+  overflow: hidden;
+}
+
+.App > h1{
+  color: white;
+}
+
+.footer{
+  z-index: 200;
+  position: fixed;
+  bottom:0;
+  width: 100% ;
+  height: 100px;
+   background-image: url(' grass-no-bottom-border-hi.png'); 
 }
 
 .App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+  animation: App-logo-spin infinite 2s linear;
+  max-width: 100%;
+}
+
+.ball-wrapper{
+  position: fixed;
+  margin-left: -5%;
+  width:100px;
+ bottom:-5px;
+  animation: App-logo-roll infinite 10s linear, App-logo-jump infinite 5s ease-in;
+ 
 }
 
 .App-header {
   background-color: #222;
-  height: 150px;
+  height: 800px;
   padding: 20px;
   color: white;
 }
@@ -22,7 +50,154 @@
   font-size: large;
 }
 
+
+/* Sign-up css */
+.sign-side{
+  text-align: center;
+  width: 60%;
+  /*tirar isto*/
+  padding-bottom: 100%;
+  margin-top:50px;
+}
+
+.sign-side > .wrapper-input-login{
+  display: block;
+  text-align: center;
+}
+
+.sign-side > .wrapper-input-login > input{
+  max-width: 50%;
+}
+
+.sign-side > .wrapper-input-login > div{
+  max-width: 100%;
+}
+
+.sign-side > .wrapper-input-login > div >p{
+  max-width: 100%;
+}
+
+.sign-side > button{
+  margin-top: 20px;
+  background-color: rgb(5,148,100);
+  border: 2px solid white;
+  color :white;
+  padding: 10px 0;
+  width: 30%;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.sign-side > button:hover{
+  cursor: pointer;
+  margin-top: 20px;
+  background-color: rgb(17, 206, 17);
+  border: 2px solid white;
+  color :white;
+  padding: 10px 20px;
+  width: 25%;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.button-login-wrapper{
+  padding: 50px 0;
+}
+
+.button-login-wrapper > button{
+  padding: 5px 80px;
+  background-color:rgba(0,0,0,0);
+  font-size: 1.5em;
+  color: white;
+  font-weight: bold;
+  border:2px solid white;
+}
+
+.button-login-wrapper > p{
+  font-size: 1.5em;
+  color: white;
+}
+
+.button-login-wrapper > p > a:hover{
+  
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+
+.button-login-wrapper > button:hover{
+  padding: 5px 80px;
+  background-color:rgba(255, 255, 255, 1);
+  font-size: 1.5em;
+  color: black;
+  font-weight: bold;
+  border: 2px solid black;
+  cursor: pointer;
+}
+
+.wrapper-login > .wrapper-input-login{
+  padding: 10px;
+  padding-right: 5%;
+  display: inline-block;
+}
+
+.wrapper-input-login > div >p{
+  color: white;
+  font-size: 1.5em;
+}
+
+.wrapper-input-login > input{
+  border: 2px solid white;
+  color: white;
+  /* margin-top: 20px; */
+  margin-left: 10px;
+  font-size: 1.5em;
+  background-color: rgba(0,0,0,0);
+  padding: 0 2%;
+}
+
+/* errors */
+
+.errorWrapper{
+  margin:0 50px;
+  text-align: left;
+}
+.error{
+  color: rgb(252, 45, 45)!important;
+}
+
+@media(max-width:600px){
+  .sign-side{
+    width: 100%;
+  }
+
+  .sign-side > button{
+    width: 100px;
+  }
+
+  .ball-wrapper{
+    width: 50px;
+  }
+}
+
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+@keyframes App-logo-roll {
+  from { margin-left:-10%; }
+  to { margin-left:100%; }
+}
+
+@keyframes App-logo-jump {
+  0% {  bottom: -5px; }
+  60% {  bottom: -5px;  }
+  70% {bottom: 250px; }
+  80% {bottom: -10px;}
+  85%{bottom: 60px;}
+  90%{bottom: -10px;}
+  95%{bottom: 20px;}
+  100%{bottom:-5px;}
+}
+
