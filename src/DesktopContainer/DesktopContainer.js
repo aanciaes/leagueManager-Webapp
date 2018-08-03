@@ -7,13 +7,15 @@ class DesktopContainer extends React.Component {
         activeItem: 'Home'
     };
 
-    showFixedMenu = () => this.setState ({fixed: true});
-    hideFixedMenu = () => this.setState ({fixed: false});
+    showFixedMenu = () => this.setState({fixed: true});
+    hideFixedMenu = () => this.setState({fixed: false, activeItem: 'Home'});
 
-    handleItemClick = (e, {name}) => this.setState ({activeItem: name});
+    handleItemClick = (e, {name}) => this.setState(name!='Home' ? {fixed: true, activeItem: name} : {activeItem: name});
 
-    render () {
-        const { fixed, activeItem } = this.state;
+    activateItem = (name) => this.setState({activeItem: name});
+
+    render() {
+        const {fixed, activeItem} = this.state;
 
         return (
             <Responsive minWidth={Responsive.onlyTablet.minWidth}>
@@ -30,7 +32,7 @@ class DesktopContainer extends React.Component {
                     >
 
                         <Menu
-                            fixed = {fixed ? 'top' : null}
+                            fixed={fixed ? 'top' : null}
                             inverted={!fixed}
                             pointing={!fixed}
                             secondary={!fixed}
@@ -40,7 +42,9 @@ class DesktopContainer extends React.Component {
                                 <Menu.Item
                                     as={'a'}
                                     name={'Home'}
-                                    active={activeItem ==='Home'}
+                                    active={activeItem === 'Home'}
+                                    link={true}
+                                    href={'#'}
                                     onClick={this.handleItemClick}
                                 >
                                     Home
@@ -48,21 +52,42 @@ class DesktopContainer extends React.Component {
                                 <Menu.Item
                                     as={'a'}
                                     name={'Work'}
-                                    active={activeItem ==='Work'}
+                                    active={activeItem === 'Work'}
                                     link={true}
-                                    href={'#'}
+                                    href={'#work'}
                                     onClick={this.handleItemClick}
                                 >
                                     Work
                                 </Menu.Item>
+                                <Menu.Item
+                                    as={'a'}
+                                    name={'Contacts'}
+                                    active={activeItem === 'Contacts'}
+                                    link={true}
+                                    href={'#contacts'}
+                                    onClick={this.handleItemClick}
+                                >
+                                    Contacts
+                                </Menu.Item>
                                 <Menu.Item position={'right'}>
                                     <Button as={'a'} inverted={!fixed}> Log In </Button>
-                                    <Button as={'a'} inverted={!fixed} style={{marginLeft: '0.5em'}}> Sign Up </Button>
+                                    <Button as={'a'} inverted={!fixed} primary={fixed}
+                                            style={{marginLeft: '0.5em'}}> Sign Up </Button>
                                 </Menu.Item>
                             </Container>
                         </Menu>
                     </Segment>
                 </Visibility>
+                <Visibility id={'work'}
+                            style={{backgroundColor: 'green', minHeight: '1000px'}}
+                            once={false} onTopPassed={() => this.activateItem('Work')}
+                            onBottomPassedReverse={() => this.activateItem('Work')}
+                />
+                <Visibility id={'contacts'}
+                            style={{backgroundColor: 'blue', minHeight: '1000px'}}
+                            once={false} onTopPassed={() => this.activateItem('Contacts')}
+                            onBottomPassedReverse={() => this.activateItem('Contacts')}
+                />
             </Responsive>
         )
     }
