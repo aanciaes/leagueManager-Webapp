@@ -1,5 +1,5 @@
 import React from 'react'
-import {Container, Menu, Responsive, Segment, Visibility} from "semantic-ui-react";
+import {Button, Container, Menu, Responsive, Segment, Visibility} from "semantic-ui-react";
 
 class DesktopContainer extends React.Component {
 
@@ -11,7 +11,6 @@ class DesktopContainer extends React.Component {
     hideFixedMenu = () => this.setState ({fixed: false});
 
     handleItemClick = (e, {name}) => this.setState ({activeItem: name});
-
 
     render () {
         const { fixed, activeItem } = this.state;
@@ -56,14 +55,14 @@ class DesktopContainer extends React.Component {
                                 >
                                     Work
                                 </Menu.Item>
+                                <Menu.Item position={'right'}>
+                                    <Button as={'a'} inverted={!fixed}> Log In </Button>
+                                    <Button as={'a'} inverted={!fixed} style={{marginLeft: '0.5em'}}> Sign Up </Button>
+                                </Menu.Item>
                             </Container>
-
                         </Menu>
-
                     </Segment>
-
                 </Visibility>
-
             </Responsive>
         )
     }
