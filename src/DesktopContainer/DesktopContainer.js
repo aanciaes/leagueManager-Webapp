@@ -85,15 +85,19 @@ class DesktopContainer extends React.Component {
                     </Segment>
                 </Visibility>
                 <Visibility id={'work'}
-                            style={{backgroundColor: 'green', minHeight: '1000px'}}
+                            style={{paddingTop: '5em', minHeight: '1000px'}}
                             once={false} onTopPassed={() => this.activateItem('Work')}
                             onBottomPassedReverse={() => this.activateItem('Work')}
-                />
+                >
+                    <a> Work Div </a>
+                </Visibility>
                 <Visibility id={'contacts'}
-                            style={{backgroundColor: 'blue', minHeight: '1000px'}}
+                            style={{paddingTop: '5em', backgroundColor: 'blue', minHeight: '1000px'}}
                             once={false} onTopPassed={() => this.activateItem('Contacts')}
                             onBottomPassedReverse={() => this.activateItem('Contacts')}
-                />
+                >
+                    <a>Contacts Div</a>
+                </Visibility>
             </Responsive>
         )
     }

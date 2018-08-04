@@ -3,7 +3,7 @@ import {Button, Container, Header, Icon} from "semantic-ui-react";
 
 const HomePage = () => (
 
-    <Container text style={{marginBottom: '10em'}}>
+    <Container text style={{marginBottom: '5em'}}>
         <Header as={'h1'}
                 content={'League Manager'}
                 inverted
@@ -25,10 +25,10 @@ const HomePage = () => (
                 marginTop: '1.5em',
             }}
         />
-        <Button animated>
+        <Button style={{marginTop: '2em'}} size={'huge'} primary animated>
             <Button.Content visible>Get Started</Button.Content>
             <Button.Content hidden>
-                <Icon name='arrow right' />
+                Let's Go <Icon name='arrow right' style={{paddingLeft: '0.5em'}}/>
             </Button.Content>
         </Button>
 
