@@ -1,5 +1,6 @@
 import React from 'react'
 import {Button, Container, Menu, Responsive, Segment, Visibility} from "semantic-ui-react";
+import HomePage from "../home/Home";
 
 class DesktopContainer extends React.Component {
 
@@ -10,7 +11,10 @@ class DesktopContainer extends React.Component {
     showFixedMenu = () => this.setState({fixed: true});
     hideFixedMenu = () => this.setState({fixed: false, activeItem: 'Home'});
 
-    handleItemClick = (e, {name}) => this.setState(name!='Home' ? {fixed: true, activeItem: name} : {activeItem: name});
+    handleItemClick = (e, {name}) => this.setState(name !== 'Home' ? {
+        fixed: true,
+        activeItem: name
+    } : {activeItem: name});
 
     activateItem = (name) => this.setState({activeItem: name});
 
@@ -76,6 +80,8 @@ class DesktopContainer extends React.Component {
                                 </Menu.Item>
                             </Container>
                         </Menu>
+
+                        <HomePage/>
                     </Segment>
                 </Visibility>
                 <Visibility id={'work'}
