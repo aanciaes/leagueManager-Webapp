@@ -1,9 +1,13 @@
 import React from 'react'
 import {Button, Container, Header, Icon} from "semantic-ui-react";
+import "../../node_modules/slick-carousel/slick/slick.css"; 
+import "../../node_modules/slick-carousel/slick/slick-theme.css";
+import HomeSlick from "../slick/homeSlick";
 
 const HomePage = () => (
 
     <Container text style={{marginBottom: '5em'}}>
+		<HomeSlick/>
         <Header as={'h1'}
                 content={'League Manager'}
                 inverted
@@ -11,13 +15,13 @@ const HomePage = () => (
                     fontSize: '4em',
                     fontWeight: 'normal',
                     marginBottom: 0,
-                    marginTop: '3em',
+                    marginTop: '1em',
                 }}
         />
 
         <Header
             as='h2'
-            content='Amator Football league Manager'
+            content='Amateur Football league Manager'
             inverted
             style={{
                 fontSize: '1.7em',

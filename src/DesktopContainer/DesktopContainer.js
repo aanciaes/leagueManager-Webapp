@@ -1,6 +1,7 @@
 import React from 'react'
 import {Button, Container, Menu, Responsive, Segment, Visibility} from "semantic-ui-react";
 import HomePage from "../home/Home";
+import './ourApp.css';
 
 class DesktopContainer extends React.Component {
 
@@ -22,7 +23,7 @@ class DesktopContainer extends React.Component {
         const {fixed, activeItem} = this.state;
 
         return (
-            <Responsive minWidth={Responsive.onlyTablet.minWidth}>
+            <Responsive minWidth={320}>
                 <Visibility
                     once={false}
                     onBottomPassed={this.showFixedMenu}
@@ -74,9 +75,9 @@ class DesktopContainer extends React.Component {
                                     Contacts
                                 </Menu.Item>
                                 <Menu.Item position={'right'}>
-                                    <Button as={'a'} inverted={!fixed}> Log In </Button>
+                                    <Button as={'a'} inverted={!fixed}><div className={"whiteShadow"}></div> <p>Log In </p></Button>
                                     <Button as={'a'} inverted={!fixed} primary={fixed}
-                                            style={{marginLeft: '0.5em'}}> Sign Up </Button>
+                                            style={{marginLeft: '0.5em'}}> <div className={"whiteShadow"}></div> <p>Sign Up  </p></Button>
                                 </Menu.Item>
                             </Container>
                         </Menu>
