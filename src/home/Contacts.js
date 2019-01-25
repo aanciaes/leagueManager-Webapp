@@ -12,6 +12,7 @@ const Contacts = () => (
 
     <Container text style={{marginBottom: '0em', textAlign: 'center'}}>
         <Header as={'h1'}
+				className={'HomeHeadOver'}
                 content={'Get in touch with us'}
                 inverted
                 style={{

@@ -7,6 +7,21 @@
 	background: linear-gradient(to bottom, #2185d0 7%,#8cdaf7 100%);
 }
 
+.HomeHeadOver{
+	width: 70%!important;
+    margin: 0 auto!important;
+    font-size: 3em!important;
+    color: #000!important;
+    padding: 50px 0px!important;
+    border-radius: 10px!important;
+    background-color: #fff!important;
+    font-weight: normal!important;
+    margin-bottom: 100px!important;
+    z-index: 22!important;
+    position: relative!important;
+    margin-top: -120px!important;
+}
+
 /* HOME FOOTER SECTION */
 
 .allRightsReserved{

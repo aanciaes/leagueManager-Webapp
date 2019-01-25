@@ -7,6 +7,7 @@ const OurFeatures = () => (
 
     <Container text style={{marginBottom: '0em', textAlign: 'center'}}>
         <Header as={'h1'}
+				className={'HomeHeadOver'}
                 content={'Our Features'}
                 inverted
                 style={{
@@ -26,6 +27,7 @@ const OurFeatures = () => (
                 fontSize: '1.7em',
                 fontWeight: 'normal',
                 marginBottom: '3.5em',
+				marginTop: '-3.9em',
             }}
         />
 		<div class="homeFeaturesWrapper">
