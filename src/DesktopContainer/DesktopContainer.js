@@ -1,6 +1,8 @@
 import React from 'react'
 import {Button, Container, Menu, Responsive, Segment, Visibility} from "semantic-ui-react";
 import HomePage from "../home/Home";
+import OurFeatures from "../home/OurFeatures";
+import Contacts from "../home/Contacts";
 import './ourApp.css';
 
 class DesktopContainer extends React.Component {
@@ -56,13 +58,13 @@ class DesktopContainer extends React.Component {
                                 </Menu.Item>
                                 <Menu.Item
                                     as={'a'}
-                                    name={'Work'}
-                                    active={activeItem === 'Work'}
+                                    name={'Features'}
+                                    active={activeItem === 'Features'}
                                     link={true}
-                                    href={'#work'}
+                                    href={'#Features'}
                                     onClick={this.handleItemClick}
                                 >
-                                    Work
+                                    Features
                                 </Menu.Item>
                                 <Menu.Item
                                     as={'a'}
@@ -85,19 +87,19 @@ class DesktopContainer extends React.Component {
                         <HomePage/>
                     </Segment>
                 </Visibility>
-                <Visibility id={'work'}
+                <Visibility id={'Features'}
                             style={{paddingTop: '5em', minHeight: '1000px'}}
-                            once={false} onTopPassed={() => this.activateItem('Work')}
-                            onBottomPassedReverse={() => this.activateItem('Work')}
+                            once={false} onTopPassed={() => this.activateItem('Features')}
+                            onBottomPassedReverse={() => this.activateItem('Features')}
                 >
-                    <a> Work Div </a>
+                    <OurFeatures/>
                 </Visibility>
                 <Visibility id={'contacts'}
-                            style={{paddingTop: '5em', backgroundColor: 'blue', minHeight: '1000px'}}
+                            style={{paddingTop: '5em', minHeight: '400px'}}
                             once={false} onTopPassed={() => this.activateItem('Contacts')}
                             onBottomPassedReverse={() => this.activateItem('Contacts')}
                 >
-                    <a>Contacts Div</a>
+                    <Contacts/>
                 </Visibility>
             </Responsive>
         )
