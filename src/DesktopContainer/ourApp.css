@@ -22,6 +22,26 @@
     margin-top: -120px!important;
 }
 
+.overPopUp{
+	position: fixed;
+	left: 40px;
+	top: 60px;
+	bottom: 40px;
+	right: 40px;
+	z-index: 0;
+	opacity: 0;
+    border-radius: 10px;
+	background-color: #fff;
+    box-shadow: 15px 15px 15px #888888;
+	transition: opacity 300ms ease-in-out;
+}
+
+.overPopUp.open{
+	z-index: 200;
+	opacity: 1;
+	transition: opacity 300ms ease-in-out;
+}
+
 /* HOME FOOTER SECTION */
 
 .allRightsReserved{

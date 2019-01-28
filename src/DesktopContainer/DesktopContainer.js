@@ -4,15 +4,19 @@ import HomePage from "../home/Home";
 import OurFeatures from "../home/OurFeatures";
 import Contacts from "../home/Contacts";
 import './ourApp.css';
+import PopUp from "../common/popup.js";
 
 class DesktopContainer extends React.Component {
 
     state = {
-        activeItem: 'Home'
+        activeItem: 'Home',
+        popUpLogIn: false
     };
-
     showFixedMenu = () => this.setState({fixed: true});
     hideFixedMenu = () => this.setState({fixed: false, activeItem: 'Home'});
+    handleLogIn () {
+        this.setState({popUpLogIn: !this.state.popUpLogIn});
+    }
 
     handleItemClick = (e, {name}) => this.setState(name !== 'Home' ? {
         fixed: true,
@@ -26,6 +30,8 @@ class DesktopContainer extends React.Component {
 
         return (
             <Responsive minWidth={320}>
+                <PopUp isOpen = {this.state.popUpLogIn}/>
+
                 <Visibility
                     once={false}
                     onBottomPassed={this.showFixedMenu}
@@ -77,9 +83,9 @@ class DesktopContainer extends React.Component {
                                     Contacts
                                 </Menu.Item>
                                 <Menu.Item position={'right'}>
-                                    <Button as={'a'} inverted={!fixed}><div className={"whiteShadow"}></div> <p>Log In </p></Button>
+                                    <Button onClick={this.handleLogIn.bind(this)} className={"logInButton"} as={'a'} inverted={!fixed}><div className={"whiteShadow"}/> <p>Log In </p></Button>
                                     <Button as={'a'} inverted={!fixed} primary={fixed}
-                                            style={{marginLeft: '0.5em'}}> <div className={"whiteShadow"}></div> <p>Sign Up  </p></Button>
+                                            style={{marginLeft: '0.5em'}}> <div className={"whiteShadow"}/> <p>Sign Up  </p></Button>
                                 </Menu.Item>
                             </Container>
                         </Menu>

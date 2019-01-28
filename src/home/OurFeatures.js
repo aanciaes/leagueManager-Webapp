@@ -2,6 +2,7 @@ import React from 'react'
 import {Button, Container, Header, Icon} from "semantic-ui-react";
 import "../../node_modules/slick-carousel/slick/slick.css"; 
 import "../../node_modules/slick-carousel/slick/slick-theme.css";
+import RandomImage from "../random.png";
 
 const OurFeatures = () => (
 
@@ -38,7 +39,7 @@ const OurFeatures = () => (
 					<h1>The standard Lorem Ipsum</h1>
 					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation</p>
 				</div>
-				<img src="/static/media/random.0c58cef5.png"/>
+				<img src={RandomImage}/>
 			</div>
 		</div>
 		
@@ -49,7 +50,7 @@ const OurFeatures = () => (
 					<h1>The standard Lorem Ipsum</h1>
 					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation</p>
 				</div>
-				<img src="/static/media/random.0c58cef5.png"/>
+				<img src={RandomImage}/>
 			</div>
 		</div>
 		
@@ -60,7 +61,7 @@ const OurFeatures = () => (
 					<h1>The standard Lorem Ipsum</h1>
 					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation</p>
 				</div>
-				<img src="/static/media/random.0c58cef5.png"/>
+				<img src={RandomImage}/>
 			</div>
 		</div>
 
