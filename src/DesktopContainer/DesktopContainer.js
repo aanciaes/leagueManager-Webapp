@@ -4,18 +4,36 @@ import HomePage from "../home/Home";
 import OurFeatures from "../home/OurFeatures";
 import Contacts from "../home/Contacts";
 import './ourApp.css';
-import PopUp from "../common/popup.js";
+import PopUpLogin from "../common/PopUpLogin.js";
+import PopUpSignUp from "../common/PopUpSignUp.js";
 
 class DesktopContainer extends React.Component {
+    constructor(props) {
+        super(props)
+        this.handleSignUp = this.handleSignUp.bind(this)
+        this.handleLogIn = this.handleLogIn.bind(this)
+    }
 
     state = {
         activeItem: 'Home',
-        popUpLogIn: false
+        popUpLogIn: false,
+        PopUpSignUp: false
     };
     showFixedMenu = () => this.setState({fixed: true});
     hideFixedMenu = () => this.setState({fixed: false, activeItem: 'Home'});
     handleLogIn () {
+        if(this.state.PopUpSignUp && !this.state.popUpLogIn){
+            this.setState({PopUpSignUp: !this.state.PopUpSignUp});
+        }
         this.setState({popUpLogIn: !this.state.popUpLogIn});
+
+    }
+
+    handleSignUp () {
+        if(this.state.popUpLogIn && !this.state.PopUpSignUp){
+            this.setState({popUpLogIn: !this.state.popUpLogIn});
+        }
+        this.setState({PopUpSignUp: !this.state.PopUpSignUp});
     }
 
     handleItemClick = (e, {name}) => this.setState(name !== 'Home' ? {
@@ -30,8 +48,8 @@ class DesktopContainer extends React.Component {
 
         return (
             <Responsive minWidth={320}>
-                <PopUp isOpen = {this.state.popUpLogIn}/>
-
+                <PopUpLogin isOpen = {this.state.popUpLogIn} handler ={this.handleLogIn}/>
+                <PopUpSignUp isOpen = {this.state.PopUpSignUp} handler ={this.handleSignUp}/>
                 <Visibility
                     once={false}
                     onBottomPassed={this.showFixedMenu}
@@ -84,7 +102,7 @@ class DesktopContainer extends React.Component {
                                 </Menu.Item>
                                 <Menu.Item position={'right'}>
                                     <Button onClick={this.handleLogIn.bind(this)} className={"logInButton"} as={'a'} inverted={!fixed}><div className={"whiteShadow"}/> <p>Log In </p></Button>
-                                    <Button as={'a'} inverted={!fixed} primary={fixed}
+                                    <Button onClick={this.handleSignUp.bind(this)} as={'a'} inverted={!fixed} primary={fixed}
                                             style={{marginLeft: '0.5em'}}> <div className={"whiteShadow"}/> <p>Sign Up  </p></Button>
                                 </Menu.Item>
                             </Container>
