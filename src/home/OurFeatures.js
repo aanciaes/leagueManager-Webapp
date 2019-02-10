@@ -1,8 +1,7 @@
 import React from 'react'
-import {Button, Container, Header, Icon} from "semantic-ui-react";
+import {Container, Header} from "semantic-ui-react";
 import "../../node_modules/slick-carousel/slick/slick.css"; 
 import "../../node_modules/slick-carousel/slick/slick-theme.css";
-import RandomImage from "../random.png";
 import RandomGif from "../randomGif.gif";
 
 const OurFeatures = () => (
@@ -32,37 +31,37 @@ const OurFeatures = () => (
 				marginTop: '-3.9em',
             }}
         />
-		<div class="homeFeaturesWrapper">
-			<div class="diagonalAbsolute blue"></div>
-			<div class="featureWrapper">
+		<div className="homeFeaturesWrapper">
+			<div className="diagonalAbsolute blue"></div>
+			<div className="featureWrapper">
 				
-				<div class="text-wrapper">
+				<div className="text-wrapper smoothAppearText">
 					<h1>The standard Lorem Ipsum</h1>
 					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation</p>
 				</div>
-				<img src={RandomGif}/>
+				<img alt="" className="smoothAppearImageFromRight" src={RandomGif}/>
 			</div>
 		</div>
 		
-		<div class="homeFeaturesWrapper blue">
-			<div class="diagonalAbsolute"></div>
-			<div class="featureWrapper">
-				<div class="text-wrapper">
+		<div className="homeFeaturesWrapper blue">
+			<div className="diagonalAbsolute"></div>
+			<div className="featureWrapper">
+				<div className="text-wrapper smoothAppearText">
 					<h1>The standard Lorem Ipsum</h1>
 					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation</p>
 				</div>
-				<img src={RandomGif}/>
+				<img alt="" className="smoothAppearImageFromLeft" src={RandomGif}/>
 			</div>
 		</div>
 		
-		<div class="homeFeaturesWrapper">
-			<div class="diagonalAbsolute blue"></div>
-			<div class="featureWrapper">
-				<div class="text-wrapper">
+		<div className="homeFeaturesWrapper">
+			<div className="diagonalAbsolute blue"></div>
+			<div className="featureWrapper">
+				<div className="text-wrapper smoothAppearText">
 					<h1>The standard Lorem Ipsum</h1>
 					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation</p>
 				</div>
-				<img src={RandomGif}/>
+				<img alt="" className="smoothAppearImageFromRight" src={RandomGif}/>
 			</div>
 		</div>
 

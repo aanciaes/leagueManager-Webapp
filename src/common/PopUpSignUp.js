@@ -2,9 +2,7 @@ import React from 'react'
 import FacebookLogin from 'react-facebook-login';
 
 class PopUpSignUp extends React.Component {
-    constructor(props) {
-        super(props);
-    }
+
 
     responseFacebook = (response) => {
         console.log(response);
@@ -21,31 +19,37 @@ class PopUpSignUp extends React.Component {
         }
         return(
             <div className={boxClass.join(' ')}>
-                <div class="cross" onClick={this.props.handler}>
+                <div className="cross" onClick={this.props.handler}>
                     <div></div>
                     <div></div>
                 </div>
-                <div class="loginWrapper">
+                <div className="loginWrapper">
                     <form action="/login" method="get">
-                        <label>Username</label>
-                        <input />
-                        <div class="flex">
-                            <div>
-                                <label>Password</label>
+                        <div className="relative">
+
+                            <input />
+                            <label className="control-label">Username</label>
+                        </div>
+                        <div className="flex">
+                            <div className="relative">
                                 <input type={"password"}/>
+                                <label className="control-label-2">Password</label>
+
                             </div>
-                            <div>
-                                <label>Confirm Password</label>
+                            <div className="relative">
                                 <input type={"password"}/>
+                                <label className="control-label-2">Confirm Password</label>
+
                             </div>
 
                         </div>
-
-                        <label>E-mail</label>
-                        <input />
+                        <div className="relative">
+                            <input />
+                            <label className="control-label">E-mail</label>
+                        </div>
                         <button type={"submit"}> <div className={"whiteShadow"}/> <p>Sign Up  </p></button>
                     </form>
-                    <div class="facebookLogin signup">
+                    <div className="facebookLogin signup">
                         <FacebookLogin
                             appId="1088597931155576"
                             autoLoad={true}

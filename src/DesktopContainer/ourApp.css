@@ -1,10 +1,14 @@
 
+
 .ui.inverted.segment, .ui.primary.inverted.segment {
-	background: linear-gradient(45deg, #2185d0 0%,#8cdaf7 100%);
+	background-image: url(../background.png);
+	background-repeat: repeat;
+
 }
 
 #contacts{
-	background: linear-gradient(to bottom, #2185d0 7%,#8cdaf7 100%);
+	background-image: url(../background.png);
+	background-repeat: repeat;
 }
 
 .flex{
@@ -50,8 +54,9 @@ input{
 	background-color: transparent;
 	color: #2185d0;
 	padding: 0 20px;
-	border: 2px solid #2185d0;
-	border-radius: 5px;
+	border:none;
+	border-bottom: 2px solid #2185d0;
+	border-radius: 0px;
 }
 
 .HomeHeadOver{
@@ -77,10 +82,10 @@ input{
 	bottom: 10%;
 	right: 10%;
 	z-index: 0;
-	opacity: 0;
+	opacity: 0!important;
     border-radius: 10px;
 	background-color: #fff;
-    box-shadow: 15px 15px 130px #2185d0;
+	box-shadow: 20px 20px 60px #000;
 	transition: all 600ms ease-in-out;
 	max-width: 800px;
 	margin: 0 auto;
@@ -88,7 +93,7 @@ input{
 
 .overPopUp.open{
 	z-index: 200;
-	opacity: 1;
+	opacity: 1!important;
 	transition: all 600ms ease-in-out;
 }
 
@@ -170,9 +175,21 @@ input{
 }
 
 .overPopUp .loginWrapper form input {
-	margin: 20px auto;
+	margin: 0px auto 20px;
 	width: 80%;
 	font-size: 18px;
+	transition: all 200ms ease-out;
+}
+
+.overPopUp .loginWrapper form .relative {
+	margin-top: 50px;
+}
+
+
+.overPopUp .loginWrapper form input:focus, .overPopUp .loginWrapper form input:active {
+	border: 2px solid #2185d0;
+	border-radius: 5px;
+	transition: all 200ms ease-in;
 }
 
 .overPopUp .loginWrapper form button:hover{
@@ -190,11 +207,33 @@ input{
 
 .overPopUp .loginWrapper form label {
 	color: #2185d0;
-	margin: 0px auto;
-	width: 80%;
+	position: absolute;
+	top: -30px;
+	left: 10%;
+	background-color: #fff;
+	z-index: 20;
+	padding: 0 5px;
 	font-weight: bold;
 	text-align: left;
 	font-size: 22px;
+	transition: all 200ms ease-out;
+}
+
+.overPopUp .loginWrapper form label.control-label-2 {
+	top: -30px;
+	left: 10%;
+}
+
+.overPopUp .loginWrapper form input:focus + .control-label, .overPopUp .loginWrapper form input:active + .control-label {
+	top: -10px;
+	left: 15%;
+	transition: all 200ms ease-in;
+}
+
+.overPopUp .loginWrapper form input:focus + .control-label-2, .overPopUp .loginWrapper form input:active + .control-label-2 {
+	top: -10px;
+	left: 15%;
+	transition: all 200ms ease-in;
 }
 
 /* HOME FOOTER SECTION */
@@ -239,13 +278,13 @@ input{
 .footerTabsWrapper .footerTab .logosWrapper a img{
 	max-width: 90%;
 	margin: 0 auto;
-	opacity: 0.8;
+	opacity: 0.8!important;
 	transform: scale(1);
 	transition: all 200ms ease-in-out;
 }
 
 .footerTabsWrapper .footerTab .logosWrapper a img:hover{
-	opacity: 1;
+	opacity: 1!important;
 	transform: scale(1.2);
 	transition: all 200ms ease-in-out;
 }
@@ -304,7 +343,8 @@ input{
 }
 
 .homeFeaturesWrapper .diagonalAbsolute.blue{
-	background-color: #2185d0;
+	background-image: url(../background.png);
+	background-repeat: repeat;
 	width: 55%;
 }
 
@@ -335,7 +375,7 @@ input{
 
 .homeFeaturesWrapper:hover .featureWrapper .text-wrapper{
 	color: #fff;
-	transition: color 400ms ease-in-out;
+	transition: color 400ms ease-in-out, opacity 400ms ease-in-out, margin-bottom 400ms ease-in-out;
 }
 
 .homeFeaturesWrapper .featureWrapper .text-wrapper{
@@ -343,10 +383,9 @@ input{
 	text-align: center;
 	color: #000;
 	width: 50%;
-	margin: 0 auto;
 	position: relative;
 	z-index: 10;
-	transition: color 400ms 400ms ease-in-out;
+	transition: color 400ms 400ms ease-in-out, opacity 400ms ease-in-out, margin-bottom 400ms ease-in-out;
 }
 
 .homeFeaturesWrapper .featureWrapper .text-wrapper h1{
@@ -363,10 +402,37 @@ input{
 	max-width: 50%;
 	margin: 30px auto 0px;
 	max-height: 400px;
+	transition: all 400ms ease-in-out;
+}
+
+
+.homeFeaturesWrapper .featureWrapper img.smoothAppearImageFromRight{
+	opacity: 0;
+	position: absolute;
+	right: -50%;
+}
+
+.homeFeaturesWrapper .featureWrapper img.smoothAppearImageFromRight.show{
+	opacity: 1;
+	right: 0px;
+	position: relative;
+}
+
+.homeFeaturesWrapper .featureWrapper img.smoothAppearImageFromLeft{
+	opacity: 0;
+	position: absolute;
+	left: -50%;
+}
+
+.homeFeaturesWrapper .featureWrapper img.smoothAppearImageFromLeft.show{
+	opacity: 1;
+	left: 0px;
+	position: relative;
 }
 
 .homeFeaturesWrapper.blue{
-	background-color: #2185d0;
+	background-image: url(../background.png);
+	background-repeat: repeat;
 }
 
 
@@ -403,7 +469,7 @@ input{
 	background-image: url(../big-background.jpg);
 	background-size: cover;
 	background-position: center;
-	opacity: 1;
+	opacity: 1!important;
 	transition:all 200ms ease-in-out;
 	overflow: hidden;
 	cursor: pointer;
@@ -433,13 +499,13 @@ input{
 }
 
 .slickHomeWrapper .slick-dots li button:before {
-    opacity: .5;
+    opacity: .5!important;
     color: #fff;
 	font-size: 14px;
 }
 
 .slickHomeWrapper .slick-dots li.slick-active button:before {
-    opacity: 1;
+    opacity: 1!important;
     color: #fff;
 }
 
@@ -522,6 +588,9 @@ button:hover .whiteShadow {
 	
 	.ui.menu .right.item:before {
 		width:0px;
+	}
+	.overPopUp .loginWrapper form .flex label {
+		font-size: 14px;
 	}
 }
 
@@ -607,4 +676,31 @@ button:hover .whiteShadow {
 	.slickHomeWrapper{
 		height: 400px;
 	}
+}
+
+/* ALL AROUND */
+
+.smoothAppearText{
+	opacity: 0;
+	margin-bottom: -150px;
+}
+
+.smoothAppearText.show{
+	opacity: 1;
+	margin-bottom: 0;
+}
+
+.relative{
+	position: relative;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active  {
+	-webkit-box-shadow: 0 0 0 30px white inset !important;
+}
+
+.ui.large.inverted.pointing.secondary.menu {
+	border: none;
 }

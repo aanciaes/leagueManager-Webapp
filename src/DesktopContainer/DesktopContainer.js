@@ -6,26 +6,39 @@ import Contacts from "../home/Contacts";
 import './ourApp.css';
 import PopUpLogin from "../common/PopUpLogin.js";
 import PopUpSignUp from "../common/PopUpSignUp.js";
+import $ from 'jquery';
 
 class DesktopContainer extends React.Component {
     constructor(props) {
         super(props)
         this.handleSignUp = this.handleSignUp.bind(this)
         this.handleLogIn = this.handleLogIn.bind(this)
+        this.handleLoggedIn = this.handleLoggedIn.bind(this)
     }
 
     state = {
         activeItem: 'Home',
         popUpLogIn: false,
-        PopUpSignUp: false
+        PopUpSignUp: false,
+        LoggedIn: false,
+        username: ""
     };
+
     showFixedMenu = () => this.setState({fixed: true});
     hideFixedMenu = () => this.setState({fixed: false, activeItem: 'Home'});
+	
     handleLogIn () {
         if(this.state.PopUpSignUp && !this.state.popUpLogIn){
             this.setState({PopUpSignUp: !this.state.PopUpSignUp});
         }
         this.setState({popUpLogIn: !this.state.popUpLogIn});
+
+    }
+
+    handleLoggedIn(name){
+        this.setState({LoggedIn: true});
+        this.setState({username: name});
+        $.cookie('loggedIn', true);
 
     }
 
@@ -45,10 +58,15 @@ class DesktopContainer extends React.Component {
 
     render() {
         const {fixed, activeItem} = this.state;
-
+        if (this.state.LoggedIn) {
+            return(
+                <h1>Olá, {this.state.username}!</h1>
+            );
+        }
         return (
             <Responsive minWidth={320}>
-                <PopUpLogin isOpen = {this.state.popUpLogIn} handler ={this.handleLogIn}/>
+
+                <PopUpLogin isOpen = {this.state.popUpLogIn} handler ={this.handleLogIn} loggedIn ={this.handleLoggedIn}/>
                 <PopUpSignUp isOpen = {this.state.PopUpSignUp} handler ={this.handleSignUp}/>
                 <Visibility
                     once={false}
@@ -128,6 +146,38 @@ class DesktopContainer extends React.Component {
             </Responsive>
         )
     }
+
+    componentDidMount() {
+        window.addEventListener('scroll', this.handleScroll);
+    }
+
+    componentWillUnmount() {
+        window.removeEventListener('scroll', this.handleScroll);
+    }
+
+    handleScroll = () => {
+        $('.smoothAppearText').each(function () {
+            if(($(this).offset().top - $(window).scrollTop() + 150)<= $(window).height() ){
+                $(this).addClass('show');
+            }else{
+                $(this).removeClass('show');
+            }
+        });
+        $('.smoothAppearImageFromRight').each(function () {
+            if(($(this).offset().top - $(window).scrollTop() + 150)<= $(window).height() ){
+                $(this).addClass('show');
+            }else{
+                $(this).removeClass('show');
+            }
+        });
+        $('.smoothAppearImageFromLeft').each(function () {
+            if(($(this).offset().top - $(window).scrollTop() + 150)<= $(window).height() ){
+                $(this).addClass('show');
+            }else{
+                $(this).removeClass('show');
+            }
+        });
+    };
 }
 
 export default DesktopContainer;

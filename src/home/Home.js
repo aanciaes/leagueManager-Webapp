@@ -32,7 +32,7 @@ const HomePage = () => (
         <Button style={{marginTop: '2em'}} size={'huge'} primary animated>
             <Button.Content visible>Get Started</Button.Content>
             <Button.Content hidden>
-                Let's Go <Icon name='arrow right' style={{paddingLeft: '0.5em'}}/>
+                Go! <Icon name='arrow right' style={{paddingLeft: '0.5em'}}/>
             </Button.Content>
         </Button>
 
